@@ -1,0 +1,37 @@
+{
+    id: 1,
+    nombre: "Italiano Fantástico",
+    descripcion: "La hamburguesa con un toque italiano de sabor y estilo",
+    precio: 4500
+  },
+  {
+    id: 2,
+    "nombre": "Pollo Paradise",
+    "descripcion": "La hamburguesa jugosa con pollo tierno y sabroso",
+     precio: 5000
+  },
+  {
+    id: 3,
+    nombre: "Classic Crave",
+    descripcion: "La hamburguesa clásica que siempre antoja",
+    precio: 4000
+  },
+
+  {
+    id: 4,
+    nombre: "Bacon Bliss",
+    descripcion: "La hamburguesa con el toque irresistible del bacon crujiente",
+    precio: 6000
+  },
+  {
+      id: 5,
+      nombre: "Garden Delight",
+      descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+      precio: 5580
+  },
+  {
+      id: 6,
+      nombre: "BBQ Supreme",
+      descripcion: "La hamburguesa con sabor a la parrilla que lo tiene todo",
+      precio: 6000
+  }

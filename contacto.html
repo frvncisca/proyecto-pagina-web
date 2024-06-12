@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidEats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel= "icon" href="img/restaurant-regular-24.png">
+</head>
+<body>
+     <!--- Header -->
+     <header>
+
+        <a href="index.html" class="logo"><i class="bx bx-restaurant"></i>RapidEats</a>
+
+        <ul class="navlist">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="registro.html" class="active">Registrarse</a></li>
+            <li><a href="menu.html" class="active">Menú</a></li>
+            <li><a href="reseñas.html" class="active">Reseñas</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="#"><i class="bx bx-search"></i></a> 
+            <a href="#"><i class="bx bx-cart"></i></a> 
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <main>
+<section>
+        <div class="container2">
+            <form id="fomulario_email" action="index.html">
+                <label> Nombre</label>
+
+                <div class="input-field">
+                <input id="name" type="text">
+                </div>
+
+
+                <label> Telefono</label>
+                <div class="input-field">
+
+                <input id="telefono" type="text">
+                </div>
+
+                <label> Email</label>
+                <div class="input-field">
+
+                <input id="email" type="email">
+                </div>
+
+                <label> Motivo del Contacto</label>
+                <div class="input-field">
+
+                <select id="entidad1" required>
+                    <option disabled selected value="0">Seleccionar una opcion</option>
+                    <option value="1">Reclamo</option>
+                    <option value="2">Solicitud de empleo</option> 
+                    <option value="3"> Consultas</option> 
+                </select>
+                </div>
+                <label> Descripcion</label>
+                <div class="input-field">
+
+                <textarea id="desc"></textarea>
+                </div>
+
+                <div class="btn-field">
+                    <button id="" type="submit" class="disable">Enviar</button>
+                </div>  
+
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+
+
+          $("#fomulario_email").submit(function() {
+  
+            var nombre = $("#name").val();
+  
+            var telefono = $("#telefono").val();
+            
+            var email = $("#email").val();
+            
+            var desc = $("#desc").val();
+  
+            var selEntidad = document.getElementById("entidad1"); 
+
+            
+  
+
+
+            console.log(nombre.length);
+  
+  
+  
+            if (nombre == "" || nombre.length > 20) {
+  
+              alert("Nombre no válido");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }
+  
+  
+            if (telefono == ""||telefono.length < 8 ||telefono.length > 10) {
+  
+              alert("telefono no válido, usa este formato '912345678'");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }  
+            
+            if (email == "") {
+  
+              alert("Email no válido");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }
+            
+            
+            if (selEntidad.value == 0|| selEntidad.value =="") {
+  
+              alert("Seleccione una opcion");
+  
+              event.preventDefault();
+  
+              return false;
+            
+            }   
+
+                
+  
+            if (desc == "") {
+  
+              alert("Le falta la descripcion");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }
+            
+
+            alert("Le llegara un correo con la respuesta en las proximas 24 horas ");
+  
+          })
+  
+        })
+  
+      </script>
+</body>
+</html>

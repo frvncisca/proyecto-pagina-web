@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidEats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel= "icon" href="img/restaurant-regular-24.png">
+    <script src="https://kit.fontawesome.com/57faba85b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!--- Header -->
+    <header>
+
+        <a href="#" class="logo"><i class="bx bx-restaurant"></i>RapidEats</a>
+
+        <ul class="navlist">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="registro.html" class="active">Registrarse</a></li>
+            <li><a href="menu.html" class="active">Menú</a></li>
+            <li><a href="reseñas.html" class="active">Reseñas</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="#"><i class="bx bx-search"></i></a>
+            <div class="containers">
+                <nav>
+                    <div class="carrito" id="carrito">
+                        <i class="bx bx-cart" id="cart-icon">
+                            <div class="buy-card">
+                                <ul class="nav-card">
+                                    <li>Imagen</li>
+                                    <li>Nombre</li>
+                                    <li>Precio</li>
+                                    <li>Cantidad</li>
+                                    <li class="total">Total: </li>
+                                    <li></li>
+                                </ul>
+                                <div class="lista_de_comidas">
+    
+                                </div>
+                                <button id="vaciar_carrito">VACIAR CARRITO</button>
+                            </div>
+                        </i>
+                    </div>
+                </nav>
+            </div>
+            <div><i class='bx bx-menu' id="menu-icon"></i></div>
+        </div>
+
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+
+        <div class="home-text">
+            <h1> Delicias<span> rápidas:</span> <br> Sabor que<span> Sorprende </span></h1>
+            <a href="menu.html" class="btn">Explorar Menú <i class="bx bxs-right-arrow"> </i></a>
+
+
+        </div>
+
+        <div class="home-img">
+            <img src="img/img1.png" alt="Churrasco Italiano">
+
+        </div>
+
+    </section>
+
+    <!-- Container -->
+    <section class="container">
+
+        <div class="container-box"> 
+            <img src="img/restaurant.jpg"
+            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+            <h3>09:00 am - 21:00 pm</h3>
+            <a href="#">Horario de trabajo</a>
+        </div>
+
+        <div class="container-box"> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.3222172349613!2d-70.6697159793856!3d-33.
+            448422669203275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c4555838843b%3A0x763554bbba60885e!2sLibertador
+            %20Bernardo%20O%20Higgins%202392%2C%208350708%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1715378171921!5m2!1ses!2scl" 
+            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h3>Dirección</h3>
+            <a href="#">Av. España 8, 8350708 Santiago</a>
+        </div>
+
+        <div class="container-box"> 
+            <img src="img/evento.png">
+            <h3>Reservas a</h3>
+            <a href="#">+56 9 256184588</a>
+        </div>
+
+    </section>
+
+    <!--- About us -->
+
+    <section class="about" id="about">
+
+        <div class="about-img"> 
+            <img src="img/img1.png">
+        </div>
+
+        <div class="about-text"> 
+            <h2> El Legado del Churrasco Italiano: <br>  Una Historia de Pasión y Sabor.</h2>
+            <p>
+                Giovanni, un chef italiano apasionado, creó el "Churrasco Italiano": <br> filetes de carne con hierbas locales y salsa de tomate sobre risotto al azafrán. El plato se hizo famoso, atrayendo turistas y convirtiendo su restaurante en un éxito. El Churrasco Italiano se volvió una leyenda culinaria, mostrando la magia de la cocina y el amor por los sabores auténticos. <br>
+            </p>
+            <a href="nosotros.html" class="btn">Explorar Historias <i class="bx bxs-right-arrow"> </i></a>
+        </div>
+
+    </section>
+
+    <!-- Tienda  -->
+    <section class="shop" id="shop">
+
+        <div class="middle-text">
+            <h4>Nuestro Menu</h4>
+            <h2>Productos populares</h2>
+        </div>
+
+        <div class="shop-content" id="lista-comidas">
+
+            <div class="row">
+                <img src="img/img1.png">
+                <h3>Churrasco Italiano #1</h3>
+                <p> Se inspira en los colores de la bandera italiana: rojo del tomate, verde de la palta y blanco de la mayonesa casera.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$8.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="1">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/img2.png">
+                <h3>Lomo a lo pobre #2</h3>
+                <p> El bistec a lo pobre, amado en Perú y Chile, combina carne de vacuno a la plancha con huevos y papas fritas.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$12.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="2">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/img4.png">
+                <h3>Pizza italiana #3</h3>
+                <p> La mejor pizza italiana en forma de corazón.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="3">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/img5.png">
+                <h3>Completo Italiano #4</h3>
+                <p> Una explosión de sabores con salchicha, tomate fresco, palta y nuestra deliciosa mayonesa casera en un pan suave y crujiente!</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="4">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-btn">
+            <a href="menu.html" class="btn">Ver más Productos<i class="bx bxs-right-arrow"></i></a>
+        </div>
+
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="middle-text">
+            <h4> Reseñas </h4>
+            <h2>Nuestros clientes hacen reseñas de nuestros Productos</h2>
+        </div>
+    </section>
+
+    <section class="reviews-content">
+        <div class="box">
+            <p>
+                El mejor churrasco italiano que he probado, 
+                totalmente recomendado
+            </p>
+            <div class="in-box">
+                <div class="bx-img">
+                    <img src="img/img1.png">
+                </div>
+                <div class="bxx-text">
+                    <h4>Jhon Barros</h4>
+                    <h5>Cliente</h5>
+                    <div class="ratings">
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <p>
+                La pizza con forma de corazón es una idea genial.
+            </p>
+            <div class="in-box">
+                <div class="bx-img">
+                    <img src="img/img4.png">
+                </div>
+                <div class="bxx-text">
+                    <h4>Taylor Swift</h4>
+                    <h5>Cantante famosa</h5>
+                    <div class="ratings">
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <p>
+                El completo italiano una de las mejores creaciones chilenas, recomendadisimo.
+            </p>
+            <div class="in-box">
+                <div class="bx-img">
+                    <img src="img/img5.png">
+                </div>
+                <div class="bxx-text">
+                    <h4>Francisco Saavedra</h4>
+                    <h5>Presentador de TV</h5>
+                    <div class="ratings">
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                        <a href="#"><i class="bx bxs-star"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Contacto-->
+    <section class="contact" id="contact">
+
+        <div class="contact-content">
+
+            <div class="contact-text">
+                <h2>Contáctanos</h2>
+                <p>
+                    ¡Estamos aquí para hacer de tu experiencia culinaria algo extraordinario! 
+                    Contáctanos para reservas o simplemente para charlar sobre comida deliciosa. 
+                    ¡Estamos ansiosos por conocerte y complacerte en nuestro restaurante!
+                </p>
+                <div class="social">
+                    <a href="#" class="clr"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="#"class="clr"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"class="clr"><i class="bx bxl-github"></i></a>
+                </div>
+
+            </div>
+
+            <div class="details">
+                <div class="main-d">
+                    <a href="#"><i class="bx bxs-location-plus"></i>Av. España 8, 8350708 Santiago, Región Metropolitana</a>
+                </div>
+                <div class="main-d">
+                    <a href="#"><i class="bx bx-mobile-alt"></i>+56 9 256184588</a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <script src="js/carrito.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

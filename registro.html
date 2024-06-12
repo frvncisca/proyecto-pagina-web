@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidEats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel= "icon" href="img/restaurant-regular-24.png">
+</head>
+<body>
+     <!--- Header -->
+     <header>
+
+        <a href="index.html" class="logo"><i class="bx bx-restaurant"></i>RapidEats</a>
+
+        <ul class="navlist">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="registro.html" class="active">Registrarse</a></li>
+            <li><a href="menu.html" class="active">Menú</a></li>
+            <li><a href="reseñas.html" class="active">Reseñas</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="#"><i class="bx bx-search"></i></a> 
+            <a href="#"><i class="bx bx-cart"></i></a> 
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <main>
+
+      
+        <div class="middle-text-i">
+            <h4>¡Únete a nuestra comunidad exclusiva para recibir ofertas especiales y descuentos!</h4>
+            <h2>Regístrate hoy mismo</h2>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- el cuerpo del formulario y todo el formulario en si-->
+        <div class="container">
+            <div class ="form-content" id="form1" >
+                <h1 id="title">Registrarse</h1>
+                <form id="fomulario_email" action="index.html">
+                    <div class ="input-group" id="form"  >
+
+                        <div class="input-field"  id="nameInput">
+                            <i class="fa-solid fa-user1" ></i>
+                            <input id="name" type="text" placeholder="Nombre" >
+                        </div>  
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope" ></i>
+                            <input id="email"type="email" placeholder="Correo">
+                        </div>
+
+                        <div class="input-field">
+                                <i class="fa-solid fa-lock" ></i>
+                                <input id="pass" type="password" placeholder="Contraseña">
+                        </div>  
+                        <div class="input-field"  id="nameInput5">
+                            <i class="fa-solid fa-telefono" ></i>
+                            <input id="telefono" type="number" placeholder="Telefono (desde 9)">
+                        </div>  
+                        <div class="input-field"  id="nameInput2">
+                            <i class="fa-solid fa-region" ></i>
+                            <input id="region" type="text" placeholder="Region">
+                        </div>  
+                        <div class="input-field"  id="nameInput3">
+                            <i class="fa-solid fa-comuna" ></i>
+                            <input id="comuna" type="text" placeholder="Comuna">
+                        </div>  
+                        <div class="input-field"  id="nameInput4">
+                            <i class="fa-solid fa-direccion" ></i>
+                            <input id="direccion" type="text" placeholder="Direccion">
+                        </div>  
+                            <p> Olvidaste tu contraseña <a href ="#">Click aqui</a> </p>                     
+                        </div>    
+
+              
+                        <div class="btn-field">
+                            <button id="signUp" type="button">Registrarse</button>
+                            <button id="signIn" type="button" class="disable">Login</button>
+                            <button id="" type="submit" class="disable">Enviar</button>
+                        </div>   
+                </form>
+
+            </div>
+            
+        </div>  
+    </main>
+    
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+  
+          $("#fomulario_email").submit(function() {
+  
+            var nombre = $("#name").val();
+  
+            var email = $("#email").val();
+
+            var contraseña = $("#pass").val();
+  
+            var telefono = $("#telefono").val();
+            
+            var region = $("#region").val();
+  
+            var comuna = $("#comuna").val();
+
+            var direccion = $("#direccion").val();
+            
+            
+  
+  
+  
+            console.log(nombre.length);
+  
+  
+  
+            if (nombre == "" || nombre.length > 10) {
+  
+              alert("Nombre no válido");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }
+  
+  
+  
+            if (email == "") {
+  
+              alert("Email no válido");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }
+
+            if (contraseña == ""|| contraseña.length < 8) {
+  
+              alert("Contraseña corta, prueba a que tenga mas de 8 caracteres");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }  
+
+            if (telefono == ""||telefono.length < 8 ||telefono.length > 10) {
+  
+              alert("telefono no válido, usa este formato '912345678'");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }   
+
+            if (region == "") {
+  
+              alert("Region  no válida");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            } 
+            if (comuna == "") {
+  
+              alert("comuna  no válida");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }             
+
+            if (direccion == "") {
+  
+              alert("Dirección no válida");
+  
+              event.preventDefault();
+  
+              return false;
+  
+            }             
+            
+            alert("Fomulario enviado con éxito");
+  
+          })
+  
+        })
+  
+      </script>
+
+    <!--Contacto-->
+    <section class="contact" id="contact">
+
+      <div class="contact-content">
+
+          <div class="contact-text">
+              <h2>Contáctanos</h2>
+              <p>
+                  ¡Estamos aquí para hacer de tu experiencia culinaria algo extraordinario! 
+                  Contáctanos para reservas o simplemente para charlar sobre comida deliciosa. 
+                  ¡Estamos ansiosos por conocerte y complacerte en nuestro restaurante!
+              </p>
+              <div class="social">
+                  <a href="#" class="clr"><i class="bx bxl-instagram-alt"></i></a>
+                  <a href="#"class="clr"><i class="bx bxl-facebook"></i></a>
+                  <a href="#"class="clr"><i class="bx bxl-github"></i></a>
+              </div>
+
+          </div>
+
+          <div class="details">
+              <div class="main-d">
+                  <a href="#"><i class="bx bxs-location-plus"></i>Av. España 8, 8350708 Santiago, Región Metropolitana</a>
+              </div>
+              <div class="main-d">
+                  <a href="#"><i class="bx bx-mobile-alt"></i>+56 9 256184588</a>
+              </div>
+          </div>
+
+
+
+      </div>
+
+  </section>
+</body>
+</html>

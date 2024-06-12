@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidEats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel= "icon" href="img/restaurant-regular-24.png">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <!--- Header -->
+    <header>
+
+        <a href="index.html" class="logo"><i class="bx bx-restaurant"></i>RapidEats</a>
+
+        <ul class="navlist">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="registro.html" class="active">Registrarse</a></li>
+            <li><a href="menu.html" class="active">Menú</a></li>
+            <li><a href="reseñas.html" class="active">Reseñas</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="#"><i class="bx bx-search"></i></a>
+            <div class="containers">
+                <nav>
+                    <div class="carrito" id="carrito">
+                        <i class="bx bx-cart" id="cart-icon">
+                            <div class="buy-card">
+                                <ul class="nav-card">
+                                    <li>Imagen</li>
+                                    <li>Nombre</li>
+                                    <li>Precio</li>
+                                    <li>Cantidad</li>
+                                    <li class="total">Total: </li>
+                                    <li></li>
+                                </ul>
+                                <div class="lista_de_comidas">
+    
+                                </div>
+                                <button id="vaciar_carrito">VACIAR CARRITO</button>
+                            </div>
+                        </i>
+                    </div>
+                </nav>
+            </div>
+            <div><i class='bx bx-menu' id="menu-icon"></i></div>
+        </div>
+    </header>
+    <section>
+    </head>
+    <body>
+        <div class="middle-text-i">
+            <h4>Nuestro Menú</h4>
+            <h2>Sabor al instante</h2>
+        </div>
+        <br>
+        <!--HAMBURGUESAS-->
+        <div class="middle-text-i">
+            <h4>Hamburguesas</h4>
+        </div>
+        <div class="shop-content" id="lista-comidas">
+            
+            <div class="row" id="1">
+                <img src="img/Italiano fantástico.png">
+                <h3>Italiano Fantástico</h3>
+                <p>La hamburguesa con un toque italiano de sabor y estilo</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$4.500</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="5">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+ 
+            <div class="row" id="2">
+                <img src="img/imgPollo.png">
+                <h3>Pollo Paradise</h3>
+                <p>La hamburguesa jugosa con pollo tierno y sabroso</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$5.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="6">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>            
+
+            
+            <div class="row" id="3">
+                <img src="img/imgRapid.png">
+                <h3>Classic Crave</h3>
+                <p>La hamburguesa clásica que siempre antoja</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$4.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="7">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row" id="4">
+                <img src="img/HamburguesaBacon.png">
+                <h3>Bacon Bliss</h3>
+                <p>La hamburguesa con el toque irresistible del bacon crujiente</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$8.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="8">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row" id="5">
+                <img src="img/hamburguesaVegetal.png">
+                <h3>Garden Delight</h3>
+                <p>Una explosión de sabores con vegetales frescos y proteínas vegetales</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$8.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="9">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row" id="6">
+                <img src="img/hamburguesabbq.png">
+                <h3>BBQ Supreme</h3>
+                <p>La hamburguesa con sabor a la parrilla que lo tiene todo</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$8.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="10">Agregar carrito</button>
+                    </div>>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <!--COMIDAS-->
+        <div class="middle-text-i">
+            <h4>Comidas</h4>
+        </div>
+        <div class="shop-content">
+            <div class="row">
+                <img src="img/img2.png">
+                <h3>Lomo a lo pobre</h3>
+                <p> El bistec a lo pobre, combina carne de vacuno a la plancha con huevos y papas fritas.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$12.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="11">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+                <div class="row">
+                    <img src="img/Lasaña.png">
+                    <h3>Lasaña</h3>
+                    <p>Un clásico italiano, capas de pasta, carne, salsa y queso fundido en un plato italiano irresistible todo horneado a la perfección</p>
+                    <div class="in-text">
+                        <div class="price"> 
+                            <h6>$15.000</h6>
+                        </div>
+                        <div class="s-btn">
+                            <button class="agregar-carrito" data-id ="12">Agregar carrito</button>
+                        </div>
+                    </div>
+                    <div class="top-icon">
+                        <a href="#"><i class="bx bx-heart"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="img/PASTEL-DE-CHOCLO.png">
+                    <h3>Pastel de choclo</h3>
+                    <p>Una combinación gratinada de maíz tierno, carne sazonada y un toque de queso, ¡una delicia casera!</p>
+                    <div class="in-text">
+                        <div class="price"> 
+                            <h6>$12.000</h6>
+                        </div>
+                        <div class="s-btn">
+                            <button class="agregar-carrito" data-id ="13">Agregar carrito</button>
+                        </div>
+                    </div>
+                    <div class="top-icon">
+                        <a href="#"><i class="bx bx-heart"></i></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <img src="img/chorrillana.png">
+                    <h3>Chorrillana</h3>
+                    <p>Un festín chileno de papas fritas crujientes, carne jugosa, cebolla caramelizada y huevo frito</p>
+                    <div class="in-text">
+                        <div class="price"> 
+                            <h6>$12.000</h6>
+                        </div>
+                        <div class="s-btn">
+                            <button class="agregar-carrito" data-id ="14">Agregar carrito</button>
+                        </div>
+                    </div>
+                    <div class="top-icon">
+                        <a href="#"><i class="bx bx-heart"></i></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <img src="img/pure con pollo.png">
+                    <h3>Puré con Pollo</h3>
+                    <p>Una explosión de sabores reconfortantes en cada bocado, con puré cremoso y pollo tierno en una deliciosa combinación</p>
+                    <div class="in-text">
+                        <div class="price"> 
+                            <h6>$12.000</h6>
+                        </div>
+                        <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="15">Agregar carrito</button>
+                    </div>
+                    </div>
+                    <div class="top-icon">
+                        <a href="#"><i class="bx bx-heart"></i></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <img src="img/italiana.png">
+                    <h3>Comida Italiana</h3>
+                    <p>Una experiencia gastronómica auténtica con sabores tradicionales de Italia, ingredientes frescos y una presentación exquisita</p>
+                    <div class="in-text">
+                        <div class="price"> 
+                            <h6>$12.000</h6>
+                        </div>
+                        <div class="s-btn">
+                            <button class="agregar-carrito" data-id ="16">Agregar carrito</button>
+                        </div>
+                    </div>
+                    <div class="top-icon">
+                        <a href="#"><i class="bx bx-heart"></i></a>
+                    </div>
+                </div>
+
+
+            </div>                
+            <br>
+            <!--PIZZAS-->
+            <div class="middle-text-i">
+                <h4>Pizzas</h4>
+            </div>
+            <div class="shop-content">
+            <div class="row">
+                <img src="img/pizzapepperoni.png">
+                <h3>Pizza Pepperoni</h3>
+                <p> Un clasico de toda la vida, y de lo mejor.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$10.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="17">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <img src="img/pizzamargarita.png">
+                <h3>Pizza margarita</h3>
+                <p> Una increible combinacion de sabores que te dejaran con la boca abierta.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$17.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="18">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <img src="img/img4.png">
+                <h3>Pizza italiana</h3>
+                <p> La mejor pizza italiana en forma de corazón.</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="19">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/pizza vegetariana.png">
+                <h3>Pizza Vegetariana</h3>
+                <p>Deliciosa variedad de vegetales frescos sobre masa crujiente y queso derretido</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="20">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/pizza hawaiana.png">
+                <h3>Pizza Hawaiana</h3>
+                <p>Deliciosa combinación de jamón, piña y queso derretido sobre una base de masa crujiente</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="21">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/pollo bbq.png">
+                <h3>Pizza BBQ</h3>
+                <p>Pollo a la parrilla con salsa BBQ, queso mozzarella, cebolla morada y albahaca fresca</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="22">Agregar carrito</button>
+                    </div>
+                </div>
+
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+            </div><br>
+            <!--Completos-->
+            <div class="middle-text-i">
+                <h4>Completos</h4>
+            </div>
+            <div class="shop-content">
+            <div class="row">
+                <img src="img/img5.png">
+                <h3>Completo Italiano</h3>
+                <p>Una explosión de sabores con salchicha, tomate fresco, palta y nuestra deliciosa mayonesa casera en un pan crujiente</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$21.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="23">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/Asmayo.png">
+                <h3>As mayo</h3>
+                <p>Un unico completo con Carne, nuestra deliciosa mayonesa casera en un pan crujiente para poder bajar el hambre</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$7.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="24">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/dinamico1.png">
+                <h3>Completo Dinámico</h3>
+                <p>Un dinámico con vienesa, tomate, palta, salsa americana, chucrut y mayonesa casera. ¡Sabroso y variado!</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$10.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="25">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/as barros luco.png">
+                <h3>As Barros Luco</h3>
+                <p> Un As chileno con carne asada y queso derretido, ¡una combinación irresistible!</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$10.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="26">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/hot dog classic.png">
+                <h3>Hot Dog Classic</h3>
+                <p>Un pan con salchicha, ketchup, mostaza y a veces cebolla picada o pepinillos en rodajas. ¡Es simple pero delicioso!</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$10.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="27">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="img/completo chacarero.png">
+                <h3>Completo Chacarero</h3>
+                <p>Un sándwich chileno que lleva vienesa, tomate, porotos verdes y ají verde, ¡una explosión de sabores!</p>
+                <div class="in-text">
+                    <div class="price"> 
+                        <h6>$10.000</h6>
+                    </div>
+                    <div class="s-btn">
+                        <button class="agregar-carrito" data-id ="28">Agregar carrito</button>
+                    </div>
+                </div>
+                <div class="top-icon">
+                    <a href="#"><i class="bx bx-heart"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contacto-->
+    <section class="contact" id="contact">
+
+        <div class="contact-content">
+
+            <div class="contact-text">
+                <h2>Contáctanos</h2>
+                <p>
+                    ¡Estamos aquí para hacer de tu experiencia culinaria algo extraordinario! 
+                    Contáctanos para reservas o simplemente para charlar sobre comida deliciosa. 
+                    ¡Estamos ansiosos por conocerte y complacerte en nuestro restaurante!
+                </p>
+                <div class="social">
+                    <a href="#" class="clr"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="#"class="clr"><i class="bx bxl-facebook"></i></a>
+                    <a href="#"class="clr"><i class="bx bxl-github"></i></a>
+                </div>
+
+            </div>
+
+            <div class="details">
+                <div class="main-d">
+                    <a href="#"><i class="bx bxs-location-plus"></i>Av. España 8, 8350708 Santiago, Región Metropolitana</a>
+                </div>
+                <div class="main-d">
+                    <a href="#"><i class="bx bx-mobile-alt"></i>+56 9 256184588</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/carrito.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
