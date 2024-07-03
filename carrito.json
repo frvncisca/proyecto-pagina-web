@@ -6,8 +6,8 @@
   },
   {
     id: 2,
-    "nombre": "Pollo Paradise",
-    "descripcion": "La hamburguesa jugosa con pollo tierno y sabroso",
+    nombre: "Pollo Paradise",
+    descripcion: "La hamburguesa jugosa con pollo tierno y sabroso",
      precio: 5000
   },
   {
@@ -34,4 +34,34 @@
       nombre: "BBQ Supreme",
       descripcion: "La hamburguesa con sabor a la parrilla que lo tiene todo",
       precio: 6000
-  }
+  },
+  {
+    id: 7,
+    nombre: "Garden Delight",
+    descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+    precio: 5580
+},
+{
+  id: 8,
+  nombre: "Garden Delight",
+  descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+  precio: 5580
+},
+{
+  id: 9,
+  nombre: "Garden Delight",
+  descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+  precio: 5580
+},
+{
+  id: 10,
+  nombre: "Garden Delight",
+  descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+  precio: 5580
+},
+{
+  id: 11,
+  nombre: "Garden Delight",
+  descripcion: "Una explosión de sabores con vegetales frescos y proteínas vegetales",
+  precio: 5580
+},

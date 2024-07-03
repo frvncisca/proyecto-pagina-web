@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidEats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel= "icon" href="img/restaurant-regular-24.png">
+</head>
+<body>
+     <!--- Header -->
+     <header>
+
+        <a href="index.html" class="logo"><i class="bx bx-restaurant"></i>RapidEats</a>
+
+        <ul class="navlist">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="registro.html" class="active">Registrarse</a></li>
+            <li><a href="menu.html" class="active">Menú</a></li>
+            <li><a href="reseñas.html" class="active">Reseñas</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+
+    </header>
+    <main>
+        <style>
+
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .carrito-item {
+                border: 1px solid #000;
+                padding: 10px;
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                background-color: #000;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .carrito-item img {
+                width: 100px;
+                height: auto;
+                margin-right: 20px;
+            }
+            .carrito-item p {
+                margin: 0;
+            }
+            .carrito-item .actions {
+                margin-left: auto;
+            }
+            .carrito-item .actions button {
+                margin-left: 10px;
+            }
+        </style>
+    <div class="container">
+        <h1>Carrito</h1>
+        <div id="carrito"></div>
+        <div class="button-container">
+            <button onclick="regresarInicio()">Atrás</button>
+            <button onclick="seguirCompra()">Seguir comprando</button>
+           <button onclick="comprar()">Comprar</button>
+
+        </div>
+    </div>
+
+    <script>
+        function mostrarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const carritoDiv = document.getElementById('carrito');
+
+            carritoDiv.innerHTML = '';
+            carrito.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('carrito-item');
+
+                itemDiv.innerHTML = `
+                                <img src="${item.imagen}"></img>
+                <p>${item.nombre}</p>
+                <p>${item.precio}</p>
+                <p> x  </p>
+                <p>${item.cantidad}</p>
+                 <p><span class="borrar-comida" data-id="${item.id}">X</span></p>
+                    <div class="actions">
+                        <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+                        <button onclick="incrementarCantidad(${index})">+</button>
+                        <button onclick="decrementarCantidad(${index})">-</button>
+                    </div>
+                `;
+
+                carritoDiv.appendChild(itemDiv);
+            });
+        }
+
+        function eliminarDelCarrito(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito'));
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function incrementarCantidad(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito'));
+            carrito[index].cantidad++;
+            carrito[index].precio = carrito[index].precioOriginal * carrito[index].cantidad; // Multiplicar precio por cantidad
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function decrementarCantidad(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito'));
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad--;
+                carrito[index].precio = carrito[index].precioOriginal * carrito[index].cantidad; // Ajustar precio al decrementar
+            } else {
+                carrito.splice(index, 1);
+            }
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function seguirCompra() {
+            alert('Redirigiendo a la página de pago...');
+            window.location.href = 'menu.html';
+        }
+        
+        function regresarInicio() {
+            window.location.href = 'index.html';
+        }
+
+        function comprar() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            if (carrito.length === 0) {
+                alert('El carrito está vacío. Agrega juegos antes de proceder con la compra.');
+            } else {
+                alert('Procesando la compra...');
+                // Aquí puedes agregar la lógica para procesar la compra
+                enviarDatosCarrito(carrito);  
+            }
+        }
+        function enviarDatosCarrito(carrito) {
+            fetch('procesar_compra.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ carrito: carrito })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Compra realizada exitosamente.');
+                    localStorage.removeItem('carrito');
+                    mostrarCarrito();
+                } else {
+                    alert('Hubo un problema al procesar la compra.');
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar los datos:', error);
+                alert('Hubo un problema al procesar la compra.');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', mostrarCarrito);
+    </script>
+    
+
+    <!--Contacto-->
+    <section class="contact" id="contact">
+
+      <div class="contact-content">
+
+          <div class="contact-text">
+              <h2>Contáctanos</h2>
+              <p>
+                  ¡Estamos aquí para hacer de tu experiencia culinaria algo extraordinario! 
+                  Contáctanos para reservas o simplemente para charlar sobre comida deliciosa. 
+                  ¡Estamos ansiosos por conocerte y complacerte en nuestro restaurante!
+              </p>
+              <div class="social">
+                  <a href="#" class="clr"><i class="bx bxl-instagram-alt"></i></a>
+                  <a href="#"class="clr"><i class="bx bxl-facebook"></i></a>
+                  <a href="#"class="clr"><i class="bx bxl-github"></i></a>
+              </div>
+
+          </div>
+
+          <div class="details">
+              <div class="main-d">
+                  <a href="#"><i class="bx bxs-location-plus"></i>Av. España 8, 8350708 Santiago, Región Metropolitana</a>
+              </div>
+              <div class="main-d">
+                  <a href="#"><i class="bx bx-mobile-alt"></i>+56 9 256184588</a>
+              </div>
+          </div>
+
+
+
+      </div>
+
+  </section>
+</body>
+</html>

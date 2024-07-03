@@ -3,13 +3,6 @@ const listaComidas = document.getElementById("lista-comidas"),
       contenedorCarrito = document.querySelector('.buy-card .lista_de_comidas'),
       vaciarCarritoBtn = document.querySelector('#vaciar_carrito');
 
-const carrito = document.getElementById("carrito");
-      if (carrito) {
-      // código para acceder a las propiedades o métodos de carrito
-      } else {
-        console.log("El elemento con id 'carrito' no existe");
-      }
-
 const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         header.classList.toggle('sticky', this.window.scrollY > 80);
@@ -30,6 +23,7 @@ function registrarEventsListeners () {
     //vaciar el carrito
     vaciarCarritoBtn.addEventListener('click', e => {
         articulosCarrito = []
+        localStorage.removeItem('carrito');
         limpiarHTML()
     })
 }
@@ -42,6 +36,7 @@ function agregarComida(e) {
 }
 
 function eliminarComida(e) {
+    
     if (e.target.classList.contains("borrar-comida")) {
         const comidaId = e.target.getAttribute('data-id');
 
@@ -49,18 +44,28 @@ function eliminarComida(e) {
 
         carritoHTML()
     }
+
+    // Update the articulosCarrito array
+    articulosCarrito = articulosCarrito.filter(comida => comida.id !== comidaId);
+
+    // Convert the articulosCarrito array to JSON and store it in localStorage
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
 }
 
 function leerInfo(comida) {
 
     const infoComida = {
-        imagen : comida.querySelector('img').src,
-        titulo : comida.querySelector('h3').textContent,
-        precio : comida.querySelector('.price').textContent,
+        nombre: comida.querySelector('h3').innerText,
+        precioOriginal: parseFloat(comida.querySelector('.price').innerText.replace('$', '').replace('.', '').replace(',', '.')),
+        precio: parseFloat(comida.querySelector('.price').innerText.replace('$', '').replace('.', '').replace(',', '.')),
+        imagen: comida.querySelector('img').src,
         id : comida.querySelector('button').dataset.id,
-        cantidad : 1,
-        total : parseFloat(comida.querySelector('.price').textContent.replace('$', ''))
+        cantidad: 1
     }
+
+    articulosCarrito = [...articulosCarrito, infoComida];
+
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
 
     const existe = articulosCarrito.some(comida => comida.id === infoComida.id)
 
@@ -90,12 +95,14 @@ function leerInfo(comida) {
 
 function carritoHTML() {
     limpiarHTML()
-    //Recorre el carrito de compras y genera el HTML
-    articulosCarrito.forEach(comida => {
+    const carritoData = JSON.parse(localStorage.getItem('carrito')) || [];
+            const fila = document.createElement('div');
+        fila.innerHTML = '';
+    carritoData.forEach(comida => {
         const fila = document.createElement('div');
         fila.innerHTML = `
             <img src="${comida.imagen}"></img>
-            <p>${comida.titulo}</p>
+            <p>${comida.nombre}</p>
             <p>${comida.precio}</p>
             <p>${comida.cantidad}</p>
             <p><span class="borrar-comida" data-id="${comida.id}">X</span></p>
@@ -111,4 +118,27 @@ function limpiarHTML() {
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }
 }
+
+function enviarDatosCarrito(carrito) {
+    fetch('compra.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ carrito: carrito })
+    })
+   .then(response => response.json())
+   .then(data => {
+      if (data.success) {
+        alert('Carrito guardado con éxito');
+      } else {
+        alert('Error al guardar el carrito');
+      }
+    })
+   .catch(error => {
+      console.error('Error al enviar los datos:', error);
+      alert('Error al guardar el carrito');
+    });
+    document.addEventListener('DOMContentLoaded', leerInfo);
+  }
 
